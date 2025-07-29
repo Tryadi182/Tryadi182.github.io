@@ -11,10 +11,11 @@
       href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,300;0,800;1,100;1,300;1,700&display=swap"
       rel="stylesheet"
     />
+    <!-- Fonts End -->
     <!-- Feather Icons #1-->
     <script src="https://unpkg.com/feather-icons"></script>
     <!-- Feather Icons #1 End -->
-    <!-- Fonts Emd -->
+
     <!-- My Style -->
     <link rel="stylesheet" href="css/style.css" />
   </head>
@@ -43,14 +44,52 @@
 
     <!-- Hero Section -->
     <section class="hero" id="home">
-      <main class="content">
-        <h1>Lets Enjoy The <span>Coffe</span></h1>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Error
-          deserunt harum quidem amet praesentium illo.
-        </p>
-        <a href="#" class="cta">Buy Now</a>
-      </main>
+      <!-- Carousel -->
+      <div class="carousel-container">
+        <!-- Slides -->
+        <div class="carousel-slides active">
+          <img src="/img/header-bg.jpg" alt="Slide 1" />
+          <div class="content">
+            <h1>Lets Enjoy The <span>Coffe</span></h1>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Error
+              deserunt harum quidem amet praesentium illo.
+            </p>
+            <a href="#" class="cta">Buy Now</a>
+          </div>
+        </div>
+
+        <div class="carousel-slides">
+          <img src="img/header2-bg.jpg" alt="Slide 2" />
+          <div class="content">
+            <h1>Feel the Aroma</h1>
+            <p>Quisquam voluptatum deserunt rerum adipisci minus!</p>
+            <a href="#" class="cta">Order Now</a>
+          </div>
+        </div>
+
+        <div class="carousel-slides">
+          <img src="img/header3-bg.jpg" alt="Slide 3" />
+          <div class="content">
+            <h1>Cozy Place for Coffee</h1>
+            <p>Doloremque alias porro molestias aperiam unde?</p>
+            <a href="#" class="cta">Explore</a>
+          </div>
+        </div>
+
+        <!-- Navigation arrows -->
+        <button class="carousel-btn prev">&#10094;</button>
+        <button class="carousel-btn next">&#10095;</button>
+
+        <!-- Indicators -->
+        <div class="carousel-indicators">
+          <span class="dot active" data-slide="0"></span>
+          <span class="dot" data-slide="1"></span>
+          <span class="dot" data-slide="2"></span>
+        </div>
+      </div>
+
+      <!-- Carousel  End-->
     </section>
 
     <!-- Hero Section End -->
@@ -210,7 +249,11 @@
       </div>
 
       <div class="credit">
-        <p>Created By <a href="">Tryadi Wahyu</a>. | &copy;2025.</p>
+        <p>
+          Created By
+          <a href="https://www.instagram.com/triady/">Tryadi Wahyu</a>. |
+          &copy;2025.
+        </p>
       </div>
     </footer>
     <!-- Footer End-->
