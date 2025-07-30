@@ -123,12 +123,12 @@ document.addEventListener("DOMContentLoaded", function () {
       const fullDatetime = `${formattedDate} ${formattedTime}`;
 
       const pesan =
-        `Halo, saya ingin reservasi tempat untuk event.` +
-        `Nama: ${name}` +
-        `Email: ${email}` +
-        `No HP: ${phone}` +
-        `Tanggal & Waktu: ${fullDatetime}` +
-        `Jumlah Orang: ${maxPeople}` +
+        `Halo, saya ingin reservasi tempat untuk event.\n\n` +
+        `Nama: ${name}\n` +
+        `Email: ${email}\n` +
+        `No HP: ${phone}\n` +
+        `Tanggal & Waktu: ${fullDatetime}\n` +
+        `Jumlah Orang: ${maxPeople}\n` +
         `Jenis Event: ${eventType}`;
 
       const noWA = "6285259305470"; // Ganti dengan nomor WA kamu, format tanpa + dan nol
