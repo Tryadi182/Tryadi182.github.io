@@ -89,7 +89,7 @@ document.addEventListener("DOMContentLoaded", function () {
       const phone = document
         .querySelector('input[placeholder="Phone Number"]')
         .value.trim();
-      const datetime = document
+      const datetimeRaw = document
         .querySelector('input[type="datetime-local"]')
         .value.trim();
       const maxPeople = document
@@ -97,17 +97,37 @@ document.addEventListener("DOMContentLoaded", function () {
         .value.trim();
       const eventType = document.querySelector("select").value;
 
-      if (!name || !email || !phone || !datetime || !maxPeople || !eventType) {
+      if (
+        !name ||
+        !email ||
+        !phone ||
+        !datetimeRaw ||
+        !maxPeople ||
+        !eventType
+      ) {
         alert("Harap isi semua kolom.");
         return;
       }
+
+      // Format tanggal & waktu
+      const dateObj = new Date(datetimeRaw);
+      const formattedDate = dateObj.toLocaleDateString("id-ID", {
+        day: "numeric",
+        month: "long",
+        year: "numeric",
+      });
+      const formattedTime = dateObj.toLocaleTimeString("id-ID", {
+        hour: "2-digit",
+        minute: "2-digit",
+      });
+      const fullDatetime = `${formattedDate} ${formattedTime}`;
 
       const pesan =
         `Halo, saya ingin reservasi tempat untuk event.%0A%0A` +
         `Nama: ${name}%0A` +
         `Email: ${email}%0A` +
         `No HP: ${phone}%0A` +
-        `Tanggal & Waktu: ${datetime}%0A` +
+        `Tanggal & Waktu: ${fullDatetime}%0A` +
         `Jumlah Orang: ${maxPeople}%0A` +
         `Jenis Event: ${eventType}`;
 
