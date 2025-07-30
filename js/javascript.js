@@ -74,6 +74,7 @@ document.addEventListener("DOMContentLoaded", function () {
 // send wa logic
 
 // Kirim data form ke WhatsApp
+
 document.addEventListener("DOMContentLoaded", function () {
   const sendBtn = document.getElementById("send-wa");
 
@@ -86,15 +87,30 @@ document.addEventListener("DOMContentLoaded", function () {
         .querySelector('input[placeholder="Email"]')
         .value.trim();
       const phone = document
-        .querySelector('input[placeholder="Phone"]')
+        .querySelector('input[placeholder="Phone Number"]')
         .value.trim();
+      const datetime = document
+        .querySelector('input[type="datetime-local"]')
+        .value.trim();
+      const maxPeople = document
+        .querySelector('input[placeholder="Max People"]')
+        .value.trim();
+      const eventType = document.querySelector("select").value;
 
-      if (!name || !email || !phone) {
+      if (!name || !email || !phone || !datetime || !maxPeople || !eventType) {
         alert("Harap isi semua kolom.");
         return;
       }
 
-      const pesan = `Halo, saya ingin memesan kopi.%0A%0ANama: ${name}%0AEmail: ${email}%0ANo HP: ${phone}`;
+      const pesan =
+        `Halo, saya ingin reservasi tempat untuk event.%0A%0A` +
+        `Nama: ${name}%0A` +
+        `Email: ${email}%0A` +
+        `No HP: ${phone}%0A` +
+        `Tanggal & Waktu: ${datetime}%0A` +
+        `Jumlah Orang: ${maxPeople}%0A` +
+        `Jenis Event: ${eventType}`;
+
       const noWA = "6285259305470"; // Ganti dengan nomor WA kamu, format tanpa + dan nol
       const linkWA = `https://wa.me/${noWA}?text=${pesan}`;
 

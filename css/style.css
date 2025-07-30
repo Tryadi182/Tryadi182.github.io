@@ -362,13 +362,19 @@ html {
 .contact {
   padding: 8rem 7% 1.4rem;
 }
-.contact h2 {
+.contact h1 {
   text-align: center;
   font-size: 2.5rem;
   margin-bottom: 1rem;
 }
-.contact h2 span {
+.contact h1 span {
   color: var(--primary);
+}
+
+.contact h2 {
+  text-align: center;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
 }
 
 .contact p {
@@ -427,6 +433,39 @@ html {
   cursor: pointer;
   border-radius: 10px;
   box-shadow: 1px 1px 3px rgba(1, 1, 3, 0.5);
+}
+
+.contact .row form .input-group input[type="datetime-local"],
+.contact .row form .input-group input[type="number"],
+.contact .row form .input-group select {
+  width: 100%;
+  padding: 2rem;
+  font-size: 1.7rem;
+  background: none;
+  color: #fff;
+  border: none;
+}
+
+.contact .row form .input-group select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-color: var(--bg);
+}
+.contact .row form .input-group select:focus {
+  outline: none;
+  background-color: var(--bg);
+}
+
+.contact .row form .input-group select option {
+  color: #000;
+  background-color: #fff;
+}
+
+.contact .row form .input-group select option:checked,
+.contact .row form .input-group select option:hover {
+  background-color: var(--bg);
+  color: #fff;
 }
 /* Form end */
 /* Contact Section End*/

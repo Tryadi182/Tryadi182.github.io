@@ -198,9 +198,11 @@
 
     <!-- Contact Section -->
     <section id="contact" class="contact">
-      <h2>Contact <span>Us</span></h2>
+      <h1>Contact <span>Us</span></h1>
+      <h2>Event Reservation Form</h2>
       <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste, quis.
+        Reserve your spot for private events, meetups, or celebrations at our
+        venue.
       </p>
       <!-- map -->
       <div class="row">
@@ -216,21 +218,51 @@
         <form action="">
           <div class="input-group">
             <i data-feather="user"></i>
-            <input type="text" placeholder="Name" />
+            <input type="text" placeholder="Name" required name="name" />
           </div>
           <div class="input-group">
             <i data-feather="mail"></i>
-            <input type="text" placeholder="Email" />
+            <input type="email" placeholder="Email" required name="email" />
           </div>
           <div class="input-group">
             <i data-feather="phone"></i>
-            <input type="text" placeholder="Phone" />
+            <input
+              type="tel"
+              placeholder="Phone Number"
+              required
+              name="phone"
+            />
           </div>
-          <button type="button" class="btn" id="send-wa">Send</button>
+          <div class="input-group">
+            <i data-feather="calendar"></i>
+            <input type="datetime-local" required name="event_time" />
+          </div>
+          <div class="input-group">
+            <i data-feather="users"></i>
+            <input
+              type="number"
+              placeholder="Max People"
+              required
+              min="1"
+              name="max_people"
+            />
+          </div>
+          <div class="input-group">
+            <i data-feather="chevron-down"></i>
+            <select required name="event_type">
+              <option value="" disabled selected>Select Event Type</option>
+              <option value="private">Private Gathering</option>
+              <option value="meetup">Meetup</option>
+              <option value="birthday">Birthday</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+          <button type="submit" class="btn">Reserve Now</button>
         </form>
       </div>
       <!-- Form pemesanan -->
     </section>
+
     <!-- Contact Section End -->
 
     <!-- Footer -->
