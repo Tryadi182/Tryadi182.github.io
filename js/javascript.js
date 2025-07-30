@@ -93,7 +93,7 @@ document.addEventListener("DOMContentLoaded", function () {
         .querySelector('input[type="datetime-local"]')
         .value.trim();
       const maxPeople = document
-        .querySelector('input[placeholder="Max People"]')
+        .querySelector('input[placeholder="Max People = 10"]')
         .value.trim();
       const eventType = document.querySelector("select").value;
 
