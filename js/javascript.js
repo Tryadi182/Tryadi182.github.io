@@ -97,6 +97,10 @@ document.addEventListener("DOMContentLoaded", function () {
         .value.trim();
       const eventType = document.querySelector("select").value;
 
+      if (maxPeople > 10) {
+        alert("Maximum number for people is 10");
+        return;
+      }
       if (
         !name ||
         !email ||
@@ -106,6 +110,43 @@ document.addEventListener("DOMContentLoaded", function () {
         !eventType
       ) {
         alert("Harap isi semua kolom.");
+        return;
+      }
+
+      // Cek apakah tanggal pemesanan minimal 1 hari dari sekarang
+      const selectedDate = new Date(datetimeRaw);
+      const now = new Date();
+      now.setHours(0, 0, 0, 0);
+      const minDate = new Date(now);
+      minDate.setDate(now.getDate() + 1);
+
+      // Penjagaan date h-1
+      if (selectedDate < minDate) {
+        alert("Reservation date must be at least one day from today.");
+        return;
+      }
+
+      // Validasi format email
+      const emailParts = email.split("@");
+      if (emailParts.length !== 2) {
+        alert("Invalid email format.");
+        return;
+      }
+
+      const domainPart = emailParts[1];
+      const domainPattern = /^[a-zA-Z0-9.]+$/;
+
+      if (!domainPattern.test(domainPart)) {
+        alert("Email domain must contain only letters, numbers, and periods.");
+        return;
+      }
+
+      // Penjagaan nomor telepon
+      const phonePattern = /^\+?\d{9,15}$/;
+      if (!phonePattern.test(phone)) {
+        alert(
+          "Phone number must be 9–15 digits and contain only numbers (optionally starting with +)."
+        );
         return;
       }
 
