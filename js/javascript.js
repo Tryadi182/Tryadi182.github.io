@@ -132,7 +132,8 @@ document.addEventListener("DOMContentLoaded", function () {
         `Jenis Event: ${eventType}`;
 
       const noWA = "6285259305470"; // Ganti dengan nomor WA kamu, format tanpa + dan nol
-      const linkWA = `https://wa.me/${noWA}?text=${encodeURIComponent(pesan)}`;
+      const encodedPesan = encodeURIComponent(pesan);
+      const linkWA = `https://wa.me/${noWA}?text=${encodedPesan}`;
 
       window.open(linkWA, "_blank");
     });
