@@ -76,7 +76,7 @@ document.addEventListener("DOMContentLoaded", function () {
 // Kirim data form ke WhatsApp
 
 document.addEventListener("DOMContentLoaded", function () {
-  const sendBtn = document.getElementById("send-wa");
+  const sendBtn = document.getElementById("submit");
 
   if (sendBtn) {
     sendBtn.addEventListener("click", function () {
