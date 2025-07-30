@@ -70,3 +70,37 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 // carousel logic end
+
+// send wa logic
+
+// Kirim data form ke WhatsApp
+document.addEventListener("DOMContentLoaded", function () {
+  const sendBtn = document.getElementById("send-wa");
+
+  if (sendBtn) {
+    sendBtn.addEventListener("click", function () {
+      const name = document
+        .querySelector('input[placeholder="Name"]')
+        .value.trim();
+      const email = document
+        .querySelector('input[placeholder="Email"]')
+        .value.trim();
+      const phone = document
+        .querySelector('input[placeholder="Phone"]')
+        .value.trim();
+
+      if (!name || !email || !phone) {
+        alert("Harap isi semua kolom.");
+        return;
+      }
+
+      const pesan = `Halo, saya ingin memesan kopi.%0A%0ANama: ${name}%0AEmail: ${email}%0ANo HP: ${phone}`;
+      const noWA = "6285259305470"; // Ganti dengan nomor WA kamu, format tanpa + dan nol
+      const linkWA = `https://wa.me/${noWA}?text=${pesan}`;
+
+      window.open(linkWA, "_blank");
+    });
+  }
+});
+
+// send wa logic end
